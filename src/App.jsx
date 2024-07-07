@@ -18,14 +18,16 @@ const App = () => {
   };
 
   const addPerson = (person) => {
-    setPeople([...people, person]);
+    setPeople([person, ...people]);
   };
 
   return (
-    <div>
-      <h1>People Management</h1>
-      <PersonForm addPerson={addPerson} />
-      <PersonList people={people} deletePerson={deletePerson} />
+    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-xl">
+      <div>
+        <h1 className="text-2xl font-bold mb-4">People Management</h1>
+        <PersonForm addPerson={addPerson} />
+        <PersonList people={people} deletePerson={deletePerson} />
+      </div>
     </div>
   );
 };

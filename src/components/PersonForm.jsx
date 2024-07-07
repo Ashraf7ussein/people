@@ -34,55 +34,68 @@ const PersonForm = ({ addPerson }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="firstName"
-        placeholder="First Name"
-        value={formData.firstName}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="middleName"
-        placeholder="Middle Name"
-        value={formData.middleName}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="lastName"
-        placeholder="Last Name"
-        value={formData.lastName}
-        onChange={handleChange}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-      />
-
-      <input
-        type="date"
-        name="dob"
-        placeholder="Date of Birth"
-        value={formData.dob}
-        onChange={handleChange}
-      />
-      <label>
+    <div className="">
+      <form className="flex mb-4 flex-col gap-2" onSubmit={handleSubmit}>
         <input
-          type="checkbox"
-          name="isMale"
-          checked={formData.isMale}
+          className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-blue-500 flex-1"
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          value={formData.firstName}
           onChange={handleChange}
         />
-        Male
-      </label>
+        <input
+          className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-blue-500 flex-1"
+          type="text"
+          name="middleName"
+          placeholder="Middle Name"
+          value={formData.middleName}
+          onChange={handleChange}
+        />
+        <input
+          className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-blue-500 flex-1"
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          value={formData.lastName}
+          onChange={handleChange}
+        />
+        <input
+          className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-blue-500 flex-1"
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+        />
 
-      <button type="submit">Submit</button>
-    </form>
+        <input
+          className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-blue-500 flex-1"
+          type="date"
+          name="dob"
+          placeholder="Date of Birth"
+          value={formData.dob}
+          onChange={handleChange}
+        />
+        <label>
+          <input
+            className="mx-2 my-4 "
+            type="checkbox"
+            name="isMale"
+            checked={formData.isMale}
+            onChange={handleChange}
+          />
+          Male
+        </label>
+
+        <button
+          className="px-3 py-1 my-4 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 
